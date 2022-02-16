@@ -7,14 +7,25 @@ const tasks = [
     question: "Hvor mange dager er det mellom disse?",
     answer: 20,
     max: 150,
+    gameMode: "slider",
   },
   {
     pic: "/hei.png",
     question: "Hei?",
     answer: 1500,
     max: 5000,
+    gameMode: "slider",
+  },
+  {
+    pic1: "/hei.png",
+    pic2: "/hallo.png",
+    question: "Hei?",
+    answer: 1,
+    gameMode: "pick-image",
   },
 ];
+
+const gameModes = ["slider", "kahoot", "pick-image"];
 
 const Gamepage = () => {
   const [index, setIndex] = useState(0);
@@ -45,6 +56,10 @@ const Gamepage = () => {
   };
 
   if (!task) return <div>No more questions</div>;
+
+  if (task.gameMode === "kahoot") {
+    return <div>heahsfdjkh</div>;
+  }
 
   return (
     <div>
