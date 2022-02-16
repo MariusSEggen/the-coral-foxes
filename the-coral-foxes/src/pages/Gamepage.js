@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import DaysSlider from "../components/DaysSlider";
+import Button from "@mui/material/Button";
+import KahootButtons from "../components/KahootButtons";
 
 const tasks = [
   {
@@ -17,11 +19,14 @@ const tasks = [
     gameMode: "slider",
   },
   {
-    pic1: "/hei.png",
-    pic2: "/hallo.png",
-    question: "Hei?",
+    pic: "/hei.png",
+    question: "Hvilket alternativ?",
+    alt1: "svar1",
+    alt2: "svar2",
+    alt3: "svar3",
+    alt4: "svar4",
     answer: 1,
-    gameMode: "pick-image",
+    gameMode: "kahoot",
   },
 ];
 
@@ -58,9 +63,29 @@ const Gamepage = () => {
   if (!task) return <div>No more questions</div>;
 
   if (task.gameMode === "kahoot") {
-    return <div>heahsfdjkh</div>;
+    console.log("KAHOOT!")
+    return (
+    <div>
+      {
+        <>
+          <h2>{task.question}</h2>
+          <img src={process.env.PUBLIC_URL + task.pic} alt="bilde" />
+          <h3>{isCorrectAnswer && "Hurra helt riktig!"}</h3>
+          <KahootButtons
+          alt1={task.alt1}
+          alt2={task.alt2}
+          alt3={task.alt3}
+          alt4={task.alt4}
+          correctAnswer={task.correctAnswer}
+          />
+          
+        </>
+      }
+    </div>
+    );
   }
 
+  if (task.gameMode === "slider"){
   return (
     <div>
       {
@@ -77,6 +102,7 @@ const Gamepage = () => {
       }
     </div>
   );
+    }
 };
 
 export default Gamepage;
