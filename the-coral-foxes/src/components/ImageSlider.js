@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 
 const ImageSlider = ({ oldPic, newPic }) => {
-  console.log(oldPic);
   const [ratio, setRatio] = useState(80);
   const [mousePos, setMousePos] = useState();
 
   const onHover = (ev) => {
     const currentTargetRect = ev.currentTarget.getBoundingClientRect();
     const event_offset = ev.pageX - currentTargetRect.left;
-    setRatio((event_offset / currentTargetRect.width) * 100).toFixed(0);
+    setRatio(((event_offset / currentTargetRect.width) * 100).toFixed(0));
   };
 
   return (
