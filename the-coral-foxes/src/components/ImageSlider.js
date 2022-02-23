@@ -8,10 +8,7 @@ const ImageSlider = ({ oldPic, newPic }) => {
   const onHover = (ev) => {
     const currentTargetRect = ev.currentTarget.getBoundingClientRect();
     const event_offset = ev.pageX - currentTargetRect.left;
-    const newRatio = ((event_offset / currentTargetRect.width) * 100).toFixed(
-      0
-    );
-    setRatio(newRatio);
+    setRatio((event_offset / currentTargetRect.width) * 100).toFixed(0);
   };
 
   return (
