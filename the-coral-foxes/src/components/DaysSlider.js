@@ -8,7 +8,7 @@ const DaysSlider = ({ max, onSubmitAnswer, correctAnswer }) => {
 
   const onSubmit = () => {
     setShowAnswer(true);
-    onSubmitAnswer(value);
+    onSubmitAnswer(100);
   };
 
   useEffect(() => {
