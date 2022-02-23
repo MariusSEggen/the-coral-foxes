@@ -6,7 +6,7 @@ import SliderGameMode from "../components/gameModes/SliderGameMode";
 import EndScreen from "../components/EndScreen";
 import KahootGameMode from "../components/gameModes/KahootGameMode";
 
-const Gamepage = () => {
+const Gamepage = ({onEndGame}) => {
   const [index, setIndex] = useState(0);
   const [task, setTask] = useState(tasks[index]);
 

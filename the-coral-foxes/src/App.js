@@ -13,7 +13,10 @@ function App() {
       </div>
     );
   }
-  return <Gamepage/>
+  if (currentPage === "Game"){
+    return <Gamepage onEndGame={()=>setCurrentPage("FrontPage")}/>  
+  }
+  
   
 }
 

@@ -1,6 +1,7 @@
 import React from "react";
+import Button from "@mui/material/Button";
 
-const EndScreen = () => {
+const EndScreen = ({onEndGame}) => {
   return (
     <div
       style={{
@@ -9,6 +10,11 @@ const EndScreen = () => {
       }}
     >
       <h2>No more questions</h2>
+      <div>
+                    <Button variant="contained" onClick={onEndGame}>
+                        Front Page
+                    </Button>
+      </div>
     </div>
   );
 };
