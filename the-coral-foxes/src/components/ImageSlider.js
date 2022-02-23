@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Slider from "@mui/material/Slider";
 
 const ImageSlider = ({ oldPic, newPic }) => {
+  console.log(oldPic);
   const [ratio, setRatio] = useState(80);
   const [mousePos, setMousePos] = useState();
 
@@ -17,8 +17,6 @@ const ImageSlider = ({ oldPic, newPic }) => {
   return (
     <div>
       <img
-        onMouseEnter={() => console.log("on mouse enter")}
-        onMouseLeave={() => console.log("on mouse leave")}
         onMouseMove={onHover}
         style={{
           position: "absolute",
